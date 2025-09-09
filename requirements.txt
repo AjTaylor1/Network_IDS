@@ -1,6 +1,3 @@
-####
-# Requirements for IDS to function properly
-# scapy
-# flask
-# requests
-####
+scapy
+flask
+requests
