@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network IDS Alerts</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px;}
+        h1 { color: #333; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 8px; border-bottom: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Network IDS Alerts</h1>
+    <ul id="alert-list"></ul>
+
+    <script>
+        async function fetchAlerts() {
+            const response = await fetch('/alerts');
+            const alerts = await response.json();
+            const list = document.getElementById('alert-list');
+            list.innerHTML = '';
+            alerts.reverse().forEach(alert => {
+                const li = document.createElement('li');
+                li.textContent = `${alert.time} - ${alert.message}`;
+                list.appendChild(li);
+            });
+        }
+
+        fetchAlerts();
+        setInterval(fetchAlerts, 5000);
+    </script>
+</body>
+</html>
