@@ -25,5 +25,5 @@ A simple Intrusion Detection System (IDS) prototype to monitor network traffic, 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/Network_IDS.git
+   git clone https://github.com/AjTaylor1/Network_IDS.git
    cd Network_IDS
